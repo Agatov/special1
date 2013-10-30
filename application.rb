@@ -4,6 +4,10 @@ require 'haml'
 require 'sass'
 require 'httparty'
 require 'json'
+require 'pony'
+require 'i18n'
+
+I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'config', 'locales', '*.yml').to_s]
 
 class Application < Sinatra::Base
   set :root, File.dirname(__FILE__)
@@ -47,6 +51,26 @@ class Application < Sinatra::Base
           }
       )
     end
+
+
+    email_message = "#{params[:order][:username]}. #{params[:order][:phone]}. #{params[:order][:email]}. \n\n\n #{params[:order][:about]}"
+
+    Pony.mail ({
+        to: 'abardacha@gmail.com',
+        subject: I18n.t('email.title', locale: 'ru'),
+        body: email_message,
+        via: :smtp,
+        via_options: {
+            address: 'smtp.gmail.com',
+            port: 587,
+            enable_starttls_auto: true,
+            user_name: 'agatovs',
+            password: 'f1i4o9l2e4n9t',
+            authentication: :plain
+        }
+    })
+
+
 
     content_type :json
     {status: :success}.to_json

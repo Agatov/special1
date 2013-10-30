@@ -8,7 +8,7 @@
     .row
       .span12
         .video-block
-          %iframe{src: '//www.youtube.com/embed/YWzYBGpXCZ4?rel=0&enablejsapi=1',
+          %iframe{src: '//www.youtube.com/embed/HAaB-t9tod0?rel=0&enablejsapi=1',
                       width: 960,
                       height: 540, frameborder: 0}
 
@@ -22,20 +22,20 @@
 
 %section{style: 'background: #ecf0f1; padding: 25px 0;'}
   .wrapper
-    .row
+    .row#form
       .span4
-        %input{type: :text, placeholder: 'Ваше имя'}
+        %input{type: :text, name: :username, placeholder: 'Ваше имя *'}
 
       .span4
-        %input{type: :text, placeholder: 'Ваш телефон'}
+        %input{type: :text, name: :phone, placeholder: 'Ваш телефон *'}
 
       .span4
-        %input{type: :text, placeholder: 'Ваш email'}
+        %input{type: :text, name: :email, placeholder: 'Ваш email *'}
     .row{style: 'padding: 25px 0'}
       .span12
-        %textarea{style: 'width: 928px; height: 100px;', placeholder: 'О вас'}
+        %textarea{name: :about, style: 'width: 928px; height: 100px;', placeholder: 'О вас'}
 
     .row
       .span12
-        .button
+        .button#send-order
           Оставить заявку

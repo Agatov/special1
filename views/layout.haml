@@ -4,7 +4,8 @@
     %script{src: 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'}
     = js :application
     %title
-      Продажа готовых фирм с историей
+      Специальная акция от Абардача
   %body
     = yield
-    = erb :metrika
+    = haml :modal
+    -#= erb :metrika
