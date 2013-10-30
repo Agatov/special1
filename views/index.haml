@@ -1,0 +1,41 @@
+%section{style: 'background: #3b9cdc; padding: 25px 0;'}
+  .section-title
+    %h1{style: 'color: #fff;'} Специальная акция от Абардача
+
+
+%section{style: 'background: #ecf0f1; padding: 50px 0;'}
+  .wrapper
+    .row
+      .span12
+        .video-block
+          %iframe{src: '//www.youtube.com/embed/YWzYBGpXCZ4?rel=0&enablejsapi=1',
+                      width: 960,
+                      height: 540, frameborder: 0}
+
+
+%section{style: 'background: #3b9cdc; padding: 25px 0;'}
+  .wrapper
+    .section-title
+      %h2{style: 'color: #fff; line-height: 1.5'}
+        Оставьте заявку, чтобы получить страницу захвата
+        за 20 000 рублей вместо 40 000 рублей
+
+%section{style: 'background: #ecf0f1; padding: 25px 0;'}
+  .wrapper
+    .row
+      .span4
+        %input{type: :text, placeholder: 'Ваше имя'}
+
+      .span4
+        %input{type: :text, placeholder: 'Ваш телефон'}
+
+      .span4
+        %input{type: :text, placeholder: 'Ваш email'}
+    .row{style: 'padding: 25px 0'}
+      .span12
+        %textarea{style: 'width: 928px; height: 100px;', placeholder: 'О вас'}
+
+    .row
+      .span12
+        .button
+          Оставить заявку
